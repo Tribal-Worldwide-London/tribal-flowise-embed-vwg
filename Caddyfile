@@ -1,4 +1,4 @@
 :{$PORT}
 
-root * /public
+root * /srv
 file_server
