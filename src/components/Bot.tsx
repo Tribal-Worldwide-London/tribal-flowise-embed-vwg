@@ -132,6 +132,7 @@ export type BotProps = {
   starterPromptFontSize?: number;
   clearChatOnReload?: boolean;
   disclaimer?: DisclaimerPopUpTheme;
+  vwRetailerId?: string
 };
 
 export type LeadsConfig = {
@@ -611,6 +612,13 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
     const body: IncomingInput = {
       question: value,
       chatId: chatId(),
+      overrideConfig: {
+        analytics:{
+          langFuse: {
+            userId: props.vwRetailerId
+          }
+        }
+      }
     };
 
     if (uploads && uploads.length > 0) body.uploads = uploads;
@@ -633,6 +641,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         apiHost: props.apiHost,
         formData: formData,
       });
+
       if (!response.data) {
         setMessages((prevMessages) => [...prevMessages, { message: 'Unable to upload documents', type: 'apiMessage' }]);
       } else {
@@ -1223,38 +1232,36 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           </div>
         )}
 
-        {props.showTitle ? (
-          <div
-            class="flex flex-row items-center w-full h-[50px] absolute top-0 left-0 z-10"
-            style={{
-              background: props.bubbleBackgroundColor,
-              color: props.bubbleTextColor,
-              'border-top-left-radius': props.isFullPage ? '0px' : '6px',
-              'border-top-right-radius': props.isFullPage ? '0px' : '6px',
-            }}
+        
+        <div
+          class="flex flex-row items-center w-full h-[50px] absolute top-0 left-0 z-10"
+          style={{
+            background: props.bubbleBackgroundColor,
+            color: props.bubbleTextColor,
+            'border-top-left-radius': props.isFullPage ? '0px' : '6px',
+            'border-top-right-radius': props.isFullPage ? '0px' : '6px',
+          }}
+        >
+          <Show when={props.titleAvatarSrc}>
+            <>
+              <div style={{ width: '15px' }} />
+              <Avatar initialAvatarSrc={props.titleAvatarSrc} />
+            </>
+          </Show>
+          <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">Volkswagen <strong>GoingElectricGPT</strong></span>
+          <div style={{ flex: 1 }} />
+          <DeleteButton
+            sendButtonColor={props.bubbleTextColor}
+            type="button"
+            isDisabled={messages().length === 1}
+            class="my-2 ml-2"
+            on:click={clearChat}
           >
-            <Show when={props.titleAvatarSrc}>
-              <>
-                <div style={{ width: '15px' }} />
-                <Avatar initialAvatarSrc={props.titleAvatarSrc} />
-              </>
-            </Show>
-            <Show when={props.title}>
-              <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">{props.title}</span>
-            </Show>
-            <div style={{ flex: 1 }} />
-            <DeleteButton
-              sendButtonColor={props.bubbleTextColor}
-              type="button"
-              isDisabled={messages().length === 1}
-              class="my-2 ml-2"
-              on:click={clearChat}
-            >
-              <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
-            </DeleteButton>
-          </div>
-        ) : null}
-        <div class="flex flex-col w-full h-full justify-start z-0">
+            <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
+          </DeleteButton>
+        </div>
+
+        <div class="flex flex-col w-full h-full justify-start z-0 mb-10">
           <div
             ref={chatContainer}
             class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-3 pt-[70px] relative scrollable-container chatbot-chat-view scroll-smooth"
@@ -1345,7 +1352,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               <For each={[...previews()]}>{(item) => <>{previewDisplay(item)}</>}</For>
             </div>
           </Show>
-          <div class="w-full px-5 pt-2 pb-1">
+          <div class="w-full px-5 pt-2 pb-1 mb-10">
             {isRecording() ? (
               <>
                 {recordingNotSupported() ? (
@@ -1417,12 +1424,6 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               />
             )}
           </div>
-          <Badge
-            footer={props.footer}
-            badgeBackgroundColor={props.badgeBackgroundColor}
-            poweredByTextColor={props.poweredByTextColor}
-            botContainer={botContainer}
-          />
         </div>
       </div>
       {sourcePopupOpen() && <Popup isOpen={sourcePopupOpen()} value={sourcePopupSrc()} onClose={() => setSourcePopupOpen(false)} />}

@@ -9,6 +9,7 @@ type BotProps = {
   chatflowConfig?: Record<string, unknown>;
   observersConfig?: observersConfigType;
   theme?: BubbleTheme;
+  vwRetailerId?: string;
 };
 
 let elementUsed: Element | undefined;

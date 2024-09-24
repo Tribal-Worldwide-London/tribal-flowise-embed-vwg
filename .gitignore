@@ -1,2 +1,13 @@
 node_modules
 .idea
+./dist/*
+dist/components/Bot.d.ts
+dist/components/Bot.d.ts.map
+dist/constants.d.ts.map
+dist/features/bubble/components/Bubble.d.ts.map
+dist/features/full/components/Full.d.ts.map
+dist/web.d.ts
+dist/web.d.ts.map
+dist/web.js
+dist/window.d.ts
+dist/window.d.ts.map

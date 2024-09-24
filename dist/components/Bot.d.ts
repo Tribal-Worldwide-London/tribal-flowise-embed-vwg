@@ -94,6 +94,7 @@ export type BotProps = {
     starterPromptFontSize?: number;
     clearChatOnReload?: boolean;
     disclaimer?: DisclaimerPopUpTheme;
+    vwRetailerId?: string;
 };
 export type LeadsConfig = {
     status: boolean;
