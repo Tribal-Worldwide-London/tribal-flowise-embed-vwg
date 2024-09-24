@@ -132,7 +132,7 @@ export type BotProps = {
   starterPromptFontSize?: number;
   clearChatOnReload?: boolean;
   disclaimer?: DisclaimerPopUpTheme;
-  vwRetailerId?: string
+  vwRetailerId?: string;
 };
 
 export type LeadsConfig = {
@@ -613,12 +613,12 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       question: value,
       chatId: chatId(),
       overrideConfig: {
-        analytics:{
+        analytics: {
           langFuse: {
-            userId: props.vwRetailerId
-          }
-        }
-      }
+            userId: props.vwRetailerId,
+          },
+        },
+      },
     };
 
     if (uploads && uploads.length > 0) body.uploads = uploads;
@@ -1232,7 +1232,6 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           </div>
         )}
 
-        
         <div
           class="flex flex-row items-center w-full h-[50px] absolute top-0 left-0 z-10"
           style={{
@@ -1248,7 +1247,9 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               <Avatar initialAvatarSrc={props.titleAvatarSrc} />
             </>
           </Show>
-          <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">Volkswagen <strong>GoingElectricGPT</strong></span>
+          <span class="px-3 whitespace-pre-wrap font-semibold max-w-full">
+            Volkswagen <strong>GoingElectricGPT</strong>
+          </span>
           <div style={{ flex: 1 }} />
           <DeleteButton
             sendButtonColor={props.bubbleTextColor}
