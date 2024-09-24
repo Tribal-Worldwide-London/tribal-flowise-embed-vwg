@@ -1353,7 +1353,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               <For each={[...previews()]}>{(item) => <>{previewDisplay(item)}</>}</For>
             </div>
           </Show>
-          <div class="w-full px-5 pt-2 pb-1 mb-10">
+          <div class="w-full px-5 pt-2 pb-1 mb-4">
             {isRecording() ? (
               <>
                 {recordingNotSupported() ? (
