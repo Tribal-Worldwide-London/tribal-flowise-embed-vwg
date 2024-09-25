@@ -91,7 +91,7 @@
         const urlParams = new URLSearchParams(queryString);
         const retailerId = urlParams.get('rid');
 
-        import Chatbot from './web.js';
+        import Chatbot from './dist/web.js';
         Chatbot.initFull({
             chatflowid: "d6a339b9-6e6e-4f1d-b9c3-3eae6e9b97fd",
             apiHost: "https://tribal-flowise-production.up.railway.app",
