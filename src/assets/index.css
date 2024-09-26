@@ -13,7 +13,7 @@
   --chatbot-host-bubble-bg-color: #f7f8ff;
   --chatbot-host-bubble-color: #303235;
 
-  --chatbot-guest-bubble-bg-color: #3b81f6;
+  --chatbot-guest-bubble-bg-color: #4CC7F4;
   --chatbot-guest-bubble-color: #ffffff;
 
   --chatbot-input-bg-color: #ffffff;
@@ -164,6 +164,7 @@ textarea {
   background-image: var(--chatbot-container-bg-image);
   background-color: var(--chatbot-container-bg-color);
   font-family:
+    'vw-text',
     'Open Sans',
     -apple-system,
     BlinkMacSystemFont,
@@ -471,3 +472,12 @@ button {
   font-size: var(--tooltip-font-size, 12px);
   transition: opacity 0.3s ease-in-out;
 }
+
+.main-chatbot-input {
+  color: #000E26;
+}
+
+.main-chatbot-input::placeholder {
+  color: #6A767D;
+}
+

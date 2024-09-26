@@ -116,11 +116,14 @@ export const TextInput = (props: Props) => {
 
   return (
     <div
-      class="w-full h-auto max-h-[192px] min-h-[56px] flex flex-col items-end justify-between chatbot-input border border-[#eeeeee]"
+      class="w-full h-auto max-h-[192px] min-h-[56px] flex flex-col items-end justify-between chatbot-input border"
       data-testid="input"
       style={{
         margin: 'auto',
         'background-color': props.backgroundColor ?? defaultBackgroundColor,
+        "border-radius": '33px',
+        'border': '0',
+        "box-shadow": '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
         color: props.textColor ?? defaultTextColor,
       }}
       onKeyDown={submitWhenEnter}
@@ -130,7 +133,7 @@ export const TextInput = (props: Props) => {
           {warningMessage()}
         </div>
       </Show>
-      <div class="w-full flex items-end justify-between">
+      <div class="w-full flex items-end justify-between p-[4px]">
         {props.uploadsConfig?.isImageUploadAllowed ? (
           <>
             <ImageUploadButton
@@ -183,7 +186,7 @@ export const TextInput = (props: Props) => {
           value={inputValue()}
           fontSize={props.fontSize}
           disabled={props.disabled}
-          placeholder={props.placeholder ?? 'Type your question'}
+          placeholder={'Type your question....'}
         />
         {props.uploadsConfig?.isSpeechToTextEnabled ? (
           <RecordAudioButton

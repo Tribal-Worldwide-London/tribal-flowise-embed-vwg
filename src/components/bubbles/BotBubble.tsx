@@ -282,7 +282,11 @@ export const BotBubble = (props: Props) => {
 
   return (
     <div>
-      <div class="flex flex-row justify-start mb-2 items-start host-container" style={{ 'margin-right': '50px' }}>
+      <div class="flex flex-row justify-start mb-[24px] items-start host-container" style={{ 
+        'margin-right': '50px',
+        'font-family': 'vw-text',
+        'font-size': '16px'
+        }}>
         <Show when={props.showAvatar}>
           <Avatar initialAvatarSrc={props.avatarSrc} />
         </Show>
@@ -327,13 +331,13 @@ export const BotBubble = (props: Props) => {
           {props.message.message && (
             <span
               ref={botMessageEl}
-              class="px-4 py-2 ml-2 max-w-full chatbot-host-bubble prose"
+              class="ml-2 max-w-full chatbot-host-bubble prose p-[24px]"
               data-testid="host-bubble"
               style={{
-                'background-color': props.backgroundColor ?? defaultBackgroundColor,
+                'background-color': 'white',
                 color: props.textColor ?? defaultTextColor,
-                'border-radius': '6px',
-                'font-size': props.fontSize ? `${props.fontSize}px` : `${defaultFontSize}px`,
+                'border-radius': '16px',
+                'font-size': '16px',
               }}
             />
           )}
