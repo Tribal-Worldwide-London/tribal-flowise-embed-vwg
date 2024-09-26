@@ -47,7 +47,7 @@ export const ShortTextInput = (props: ShortTextInputProps) => {
       style={{
         'font-size': '16px',
         resize: 'none',
-        "font-family": 'vw-text',
+        'font-family': 'vw-text',
         height: `${props.value !== '' ? height() : DEFAULT_HEIGHT}px`,
       }}
       onInput={handleInput}

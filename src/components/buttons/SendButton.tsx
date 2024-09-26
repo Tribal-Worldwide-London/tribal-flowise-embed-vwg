@@ -19,9 +19,9 @@ export const SendButton = (props: SendButtonProps) => {
         'py-[12px] px-[32px] justify-center font-semibold text-white outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 chatbot-button ' +
         props.class
       }
-      style={{ 
+      style={{
         'border-radius': '100px',
-        'background': '#001E50' 
+        background: '#001E50',
       }}
     >
       <Show when={!props.isLoading} fallback={<Spinner class="text-white" />}>
@@ -44,14 +44,14 @@ export const DeleteButton = (props: SendButtonProps) => {
         `py-2 ${paddingClass} justify-center font-semibold focus:outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 chatbot-button ` +
         props.class
       }
-      style={{ 
+      style={{
         background: 'transparent',
-        border: '1px solid #001E50', 
-        color: '#000E26', 
-        "font-size": '16px',
-        "border-radius": '48px',
-        "font-weight": '400',
-        "margin-right": '50px'
+        border: '1px solid #001E50',
+        color: '#000E26',
+        'font-size': '16px',
+        'border-radius': '48px',
+        'font-weight': '400',
+        'margin-right': '50px',
       }}
       title="Reset Chat"
     >

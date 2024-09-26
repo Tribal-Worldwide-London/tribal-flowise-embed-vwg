@@ -68,7 +68,7 @@ export const GuestBubble = (props: Props) => {
           'background-color': '#4CC7F4',
           color: props.textColor ?? defaultTextColor,
           'border-radius': '16px',
-          'font-size': '16px'
+          'font-size': '16px',
         }}
       >
         {props.message.fileUploads && props.message.fileUploads.length > 0 && (

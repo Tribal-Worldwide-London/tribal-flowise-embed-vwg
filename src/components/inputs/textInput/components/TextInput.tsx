@@ -121,9 +121,9 @@ export const TextInput = (props: Props) => {
       style={{
         margin: 'auto',
         'background-color': props.backgroundColor ?? defaultBackgroundColor,
-        "border-radius": '33px',
-        'border': '0',
-        "box-shadow": '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
+        'border-radius': '33px',
+        border: '0',
+        'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
         color: props.textColor ?? defaultTextColor,
       }}
       onKeyDown={submitWhenEnter}
