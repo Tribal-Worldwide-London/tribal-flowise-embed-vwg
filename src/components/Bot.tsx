@@ -1231,39 +1231,38 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         )}
 
         {messages().length > 1 && (
-           <div
-           class="flex flex-row h-[90] items-center w-full absolute top-0 left-0 z-10 bg-white"
-           style={{
-             'border-top-left-radius': props.isFullPage ? '0px' : '6px',
-             'border-top-right-radius': props.isFullPage ? '0px' : '6px',
-             'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
-             color: '#000E26',
-             'font-family': 'vw-head',
-             'font-size': '24px',
-             padding: '13px',
-             'font-weight': '300',
-           }}
-         >
-           <div style={{ 'padding-left': '50px' }}>
+          <div
+            class="flex flex-row h-[90] items-center w-full absolute top-0 left-0 z-10 bg-white"
+            style={{
+              'border-top-left-radius': props.isFullPage ? '0px' : '6px',
+              'border-top-right-radius': props.isFullPage ? '0px' : '6px',
+              'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
+              color: '#000E26',
+              'font-family': 'vw-head',
+              'font-size': '24px',
+              padding: '13px',
+              'font-weight': '300',
+            }}
+          >
+            <div style={{ 'padding-left': '50px' }}>
               <Logo />
-           </div>
-           <span class="px-3 whitespace-pre-wrap max-w-full">
-             Volkswagen <span style={{ 'font-weight': '700' }}>GoingElectricGPT</span>
-           </span>
-           <div style={{ flex: 1 }} />
-           <DeleteButton
-             sendButtonColor={props.bubbleTextColor}
-             type="button"
-             isDisabled={messages().length === 1}
-             class="my-2 ml-2"
-             on:click={clearChat}
-           >
-             <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
-           </DeleteButton>
-         </div>
- 
+            </div>
+            <span class="px-3 whitespace-pre-wrap max-w-full">
+              Volkswagen <span style={{ 'font-weight': '700' }}>GoingElectricGPT</span>
+            </span>
+            <div style={{ flex: 1 }} />
+            <DeleteButton
+              sendButtonColor={props.bubbleTextColor}
+              type="button"
+              isDisabled={messages().length === 1}
+              class="my-2 ml-2"
+              on:click={clearChat}
+            >
+              <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
+            </DeleteButton>
+          </div>
         )}
-       
+
         <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px]">
           <div
             ref={chatContainer}
@@ -1274,32 +1273,39 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                 return (
                   <>
                     {message.type === 'welcomeMessage' && messages().length === 1 && (
-                      <div style={{
-                        "margin-top": "100px",
-                        display: 'flex'
-                      }}>
-                        <div>
-
-                        </div>
-                        <div style={{
-                          "font-family": 'vw-head',
-                          "font-size": '48px',
-                          "font-weight": '300',
-                          "line-height": '120%'
-                        }}>
+                      <div
+                        style={{
+                          'margin-top': '100px',
+                          display: 'flex',
+                        }}
+                      >
+                        <div />
+                        <div
+                          style={{
+                            'font-family': 'vw-head',
+                            'font-size': '48px',
+                            'font-weight': '300',
+                            'line-height': '120%',
+                          }}
+                        >
                           <p>
-                            Hi there!<br />
-                            I'm your <span style={{'font-weight': '700'}}> GoingElectricGPT.</span><br />
+                            Hi there!
+                            <br />
+                            I'm your <span style={{ 'font-weight': '700' }}> GoingElectricGPT.</span>
+                            <br />
                             What would you like to know?
                           </p>
-                          <p style={{
-                             "font-family": 'vw-text',
-                             "font-size": '16px',
-                             "font-weight": '400',
-                             "line-height": '150%',
-                             'margin-top': '24px'
-                          }}>
-                            Here are some sample questions to get you started.<br />
+                          <p
+                            style={{
+                              'font-family': 'vw-text',
+                              'font-size': '16px',
+                              'font-weight': '400',
+                              'line-height': '150%',
+                              'margin-top': '24px',
+                            }}
+                          >
+                            Here are some sample questions to get you started.
+                            <br />
                             Click one to get an answer or enter you own in the input below.
                           </p>
                         </div>
