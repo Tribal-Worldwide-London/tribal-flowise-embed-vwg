@@ -1377,7 +1377,9 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             <Show when={messages().length === 1}>
               <Show when={starterPrompts().length > 0}>
                 <div class="mt-[24px] md:mt-[100px] grid grid-cols-1 md:grid-cols-4 gap-[16px] md:gap-[33px] mb-[30px] md:mb-[60px] md:ml-[50px] md:mx-[50px] ml-[32px] mx-[16px]">
-                  <For each={[...starterPrompts()]}>{(key, index) => <StarterPromptBubble prompt={key} index={index()} onPromptClick={() => promptClick(key)} />}</For>
+                  <For each={[...starterPrompts()]}>
+                    {(key, index) => <StarterPromptBubble prompt={key} index={index()} onPromptClick={() => promptClick(key)} />}
+                  </For>
                 </div>
               </Show>
             </Show>
