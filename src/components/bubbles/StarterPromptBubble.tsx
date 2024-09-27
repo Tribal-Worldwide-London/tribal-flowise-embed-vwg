@@ -2,16 +2,16 @@ type Props = {
   prompt: string;
   onPromptClick?: () => void;
   starterPromptFontSize?: number;
+  index: number;
 };
 export const StarterPromptBubble = (props: Props) => (
   <>
     <div
       data-modal-target="defaultModal"
       data-modal-toggle="defaultModal"
-      class="p-[24px] font-size-[14px] pt-[32px] animate-fade-in host-container hover:brightness-90 active:brightness-75 relative "
+      class={"p-[24px] font-size-[14px] pt-[32px] animate-fade-in host-container hover:brightness-90 active:brightness-75 relative " + `animate-bottom-${props.index + 1}`}
       onClick={() => props.onPromptClick?.()}
       style={{
-        display: 'flex',
         'font-family': 'vw-text',
         'font-weight': '400',
         'line-height': '150%',
@@ -22,6 +22,7 @@ export const StarterPromptBubble = (props: Props) => (
         'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
         'align-items': 'center',
         'text-align': 'center',
+        'bottom': '-300px'
       }}
     >
       <div
