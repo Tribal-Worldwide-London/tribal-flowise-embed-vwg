@@ -41,17 +41,19 @@ export const DeleteButton = (props: SendButtonProps) => {
       disabled={props.isDisabled || props.isLoading}
       {...props}
       class={
-        `py-2 ${paddingClass} justify-center font-semibold focus:outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 chatbot-button ` +
-        props.class
+        `py-2 ${paddingClass} justify-center font-semibold focus:outline-none flex items-center 
+        disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all 
+        filter hover:brightness-90 active:brightness-75 chatbot-button 
+        text-[11px] md:text-[16px] md:mr-[50px]
+        ` + props.class
       }
       style={{
-        background: 'transparent',
+        background: 'white',
         border: '1px solid #001E50',
         color: '#000E26',
         'font-size': '16px',
         'border-radius': '48px',
         'font-weight': '400',
-        'margin-right': '50px',
       }}
       title="Reset Chat"
     >

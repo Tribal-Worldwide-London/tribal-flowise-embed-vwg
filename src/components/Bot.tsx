@@ -25,6 +25,7 @@ import { removeLocalStorageChatHistory, getLocalStorageChatflow, setLocalStorage
 import { cloneDeep } from 'lodash';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 import { Logo } from './Logo';
+import { LogoBig } from './LogoBig';
 
 export type FileEvent<T = EventTarget> = {
   target: T;
@@ -1234,8 +1235,6 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           <div
             class="flex flex-row h-[90] items-center w-full absolute top-0 left-0 z-10 bg-white"
             style={{
-              'border-top-left-radius': props.isFullPage ? '0px' : '6px',
-              'border-top-right-radius': props.isFullPage ? '0px' : '6px',
               'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
               color: '#000E26',
               'font-family': 'vw-head',
@@ -1244,29 +1243,28 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               'font-weight': '300',
             }}
           >
-            <div style={{ 'padding-left': '50px' }}>
-              <Logo />
+              <div class='md:pl-[50px] '>
+                <Logo />
+              </div>
+              <div class="flex-1 text-[11px] md:text-[24px] px-3">
+                Volkswagen <span style={{ 'font-weight': '700' }}>GoingElectricGPT</span>
+              </div>
+              <DeleteButton
+                sendButtonColor={props.bubbleTextColor}
+                type="button"
+                isDisabled={messages().length === 1}
+                class="my-2 ml-2"
+                on:click={clearChat}
+              >
+                <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
+              </DeleteButton>
             </div>
-            <span class="px-3 whitespace-pre-wrap max-w-full">
-              Volkswagen <span style={{ 'font-weight': '700' }}>GoingElectricGPT</span>
-            </span>
-            <div style={{ flex: 1 }} />
-            <DeleteButton
-              sendButtonColor={props.bubbleTextColor}
-              type="button"
-              isDisabled={messages().length === 1}
-              class="my-2 ml-2"
-              on:click={clearChat}
-            >
-              <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
-            </DeleteButton>
-          </div>
         )}
 
         <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px]">
           <div
             ref={chatContainer}
-            class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full px-[50px] pt-[120px] relative scrollable-container chatbot-chat-view scroll-smooth"
+            class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full md:px-[50px] pt-[120px] relative scrollable-container chatbot-chat-view scroll-smooth"
           >
             <For each={[...messages()]}>
               {(message, index) => {
@@ -1274,16 +1272,20 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   <>
                     {message.type === 'welcomeMessage' && messages().length === 1 && (
                       <div
+                        class='flex flex-col md:flex-row md:mt-[100px] text-center md:text-left mx-[16px] md:mx-[50px]'
                         style={{
-                          'margin-top': '100px',
-                          display: 'flex',
+                          gap: '24px'
                         }}
                       >
-                        <div />
+                        <div class='flex text-center'>
+                          <div class='w-[100px] md:w-[320px] m-auto mt-[20px] md:mt-[0px]'>
+                            <LogoBig />
+                          </div>
+                        </div>
                         <div
+                          class='text-[24px] md:text-[48px]'
                           style={{
                             'font-family': 'vw-head',
-                            'font-size': '48px',
                             'font-weight': '300',
                             'line-height': '120%',
                           }}
@@ -1296,12 +1298,12 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                             What would you like to know?
                           </p>
                           <p
+                            class='mt-[24px]'
                             style={{
                               'font-family': 'vw-text',
                               'font-size': '16px',
                               'font-weight': '400',
                               'line-height': '150%',
-                              'margin-top': '24px',
                             }}
                           >
                             Here are some sample questions to get you started.
@@ -1372,28 +1374,27 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                 );
               }}
             </For>
-          </div>
-          <Show when={messages().length === 1}>
+            <Show when={messages().length === 1}>
             <Show when={starterPrompts().length > 0}>
-              <div class="grid grid-cols-4 gap-[33px] mb-[60px] ml-[50px] mr-[50px]">
+              <div class="mt-[24px] md:mt-[100px] grid grid-cols-1 md:grid-cols-4 gap-[16px] md:gap-[33px] mb-[30px] md:mb-[60px] md:ml-[50px] md:mx-[50px] ml-[32px] mx-[16px]">
                 <For each={[...starterPrompts()]}>
                   {(key) => (
                     <StarterPromptBubble
                       prompt={key}
                       onPromptClick={() => promptClick(key)}
-                      starterPromptFontSize={botProps.starterPromptFontSize} // Pass it here as a number
                     />
                   )}
                 </For>
               </div>
             </Show>
           </Show>
+          </div>
           <Show when={previews().length > 0}>
             <div class="w-full flex items-center justify-start gap-2 px-5 pt-2 border-t border-[#eeeeee]">
               <For each={[...previews()]}>{(item) => <>{previewDisplay(item)}</>}</For>
             </div>
           </Show>
-          <div class="w-full px-[50px] pt-2 pb-1 mb-4">
+          <div class="mx-[16px] md:mx-[50px] pt-2 pb-1 mb-4">
             {isRecording() ? (
               <>
                 {recordingNotSupported() ? (

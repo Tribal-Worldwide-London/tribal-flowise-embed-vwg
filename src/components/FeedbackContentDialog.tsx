@@ -96,7 +96,7 @@ const FeedbackContentDialog = (props: FeedbackContentDialogProps) => {
           </div>
         </div>
       </div>
-      <div class="flex opacity-25 fixed inset-0 z-[1001] bg-black" />
+      <div class="flex opacity-[60%] fixed inset-0 z-[1001] bg-black" />
     </>
   );
 };

@@ -116,14 +116,14 @@ export const TextInput = (props: Props) => {
 
   return (
     <div
-      class="w-full h-auto max-h-[192px] min-h-[56px] flex flex-col items-end justify-between chatbot-input border"
+      class="h-auto flex flex-col items-end justify-between chatbot-input border"
       data-testid="input"
       style={{
         margin: 'auto',
         'background-color': props.backgroundColor ?? defaultBackgroundColor,
-        'border-radius': '33px',
-        border: '0',
-        'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
+        "border-radius": '33px',
+        'border': '0',
+        "box-shadow": '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
         color: props.textColor ?? defaultTextColor,
       }}
       onKeyDown={submitWhenEnter}
@@ -188,17 +188,6 @@ export const TextInput = (props: Props) => {
           disabled={props.disabled}
           placeholder={'Type your question....'}
         />
-        {props.uploadsConfig?.isSpeechToTextEnabled ? (
-          <RecordAudioButton
-            buttonColor={props.sendButtonColor}
-            type="button"
-            class="m-0 start-recording-button h-14 flex items-center justify-center"
-            isDisabled={props.disabled || isSendButtonDisabled()}
-            on:click={props.onMicrophoneClicked}
-          >
-            <span style={{ 'font-family': 'Poppins, sans-serif' }}>Record Audio</span>
-          </RecordAudioButton>
-        ) : null}
         <SendButton
           sendButtonColor={props.sendButtonColor}
           type="button"
@@ -208,6 +197,17 @@ export const TextInput = (props: Props) => {
         >
           <span style={{ 'font-family': 'Poppins, sans-serif' }}>Send</span>
         </SendButton>
+        {props.uploadsConfig?.isSpeechToTextEnabled ? (
+          <RecordAudioButton
+            buttonColor={props.sendButtonColor}
+            type="button"
+            class="m-0 start-recording-button h-14 ml-[8px] flex items-center justify-center"
+            isDisabled={props.disabled || isSendButtonDisabled()}
+            on:click={props.onMicrophoneClicked}
+          >
+            <span style={{ 'font-family': 'Poppins, sans-serif' }}>Record Audio</span>
+          </RecordAudioButton>
+        ) : null}
       </div>
     </div>
   );

@@ -91,8 +91,7 @@ pre {
 .bubble1,
 .bubble2,
 .bubble3 {
-  background-color: var(--chatbot-host-bubble-color);
-  opacity: 0.5;
+  background-color: #00B0F0; 
 }
 
 .bubble1 {
@@ -200,11 +199,9 @@ textarea {
 
 .chatbot-host-bubble {
   color: var(--chatbot-host-bubble-color);
-  background-color: #f7f8ff;
 }
 
 .chatbot-host-bubble > .bubble-typing {
-  background-color: #f7f8ff;
   border: var(--chatbot-host-bubble-border);
   border-radius: 6px;
 }

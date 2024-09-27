@@ -10,7 +10,7 @@ type RatingButtonProps = {
   rating?: string;
 } & JSX.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const defaultFeedbackColor = '#3B81F6';
+const defaultFeedbackColor = '#000E26';
 
 export const CopyToClipboardButton = (props: RatingButtonProps) => {
   return (
@@ -58,7 +58,7 @@ export const ThumbsDownButton = (props: RatingButtonProps) => {
       disabled={props.isDisabled || props.isLoading}
       {...props}
       class={
-        'p-2 justify-center font-semibold text-white focus:outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 chatbot-button ' +
+        'p-2 justify-center font-semibold text-white cursor-pointer focus:outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 chatbot-button ' +
         props.class
       }
       style={{ background: 'transparent', border: 'none' }}

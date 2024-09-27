@@ -33,7 +33,7 @@ type Props = {
 const defaultBackgroundColor = '#f7f8ff';
 const defaultTextColor = '#303235';
 const defaultFontSize = 16;
-const defaultFeedbackColor = '#3B81F6';
+const defaultFeedbackColor = '#303235';
 
 Marked.setOptions({ isNoP: true, sanitize: true });
 
@@ -283,9 +283,8 @@ export const BotBubble = (props: Props) => {
   return (
     <div>
       <div
-        class="flex flex-row justify-start mb-[24px] items-start host-container"
+        class="flex flex-row justify-start mb-[16px] items-start host-container mr-[50px] :mr-[190px]"
         style={{
-          'margin-right': '50px',
           'font-family': 'vw-text',
           'font-size': '16px',
         }}
@@ -382,7 +381,7 @@ export const BotBubble = (props: Props) => {
         </div>
       </div>
       <div>
-        {props.message.sourceDocuments && props.message.sourceDocuments.length && (
+        {/*props.message.sourceDocuments && props.message.sourceDocuments.length && (
           <>
             <Show when={props.sourceDocsTitle}>
               <span class="px-2 py-[10px] font-semibold">{props.sourceDocsTitle}</span>
@@ -408,7 +407,7 @@ export const BotBubble = (props: Props) => {
               </For>
             </div>
           </>
-        )}
+        )*/}
       </div>
       <div>
         {props.chatFeedbackStatus && props.message.messageId && (
