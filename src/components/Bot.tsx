@@ -1243,22 +1243,22 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               'font-weight': '300',
             }}
           >
-              <div class='md:pl-[50px] '>
-                <Logo />
-              </div>
-              <div class="flex-1 text-[11px] md:text-[24px] px-3">
-                Volkswagen <span style={{ 'font-weight': '700' }}>GoingElectricGPT</span>
-              </div>
-              <DeleteButton
-                sendButtonColor={props.bubbleTextColor}
-                type="button"
-                isDisabled={messages().length === 1}
-                class="my-2 ml-2"
-                on:click={clearChat}
-              >
-                <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
-              </DeleteButton>
+            <div class="md:pl-[50px] ">
+              <Logo />
             </div>
+            <div class="flex-1 text-[11px] md:text-[24px] px-3">
+              Volkswagen <span style={{ 'font-weight': '700' }}>GoingElectricGPT</span>
+            </div>
+            <DeleteButton
+              sendButtonColor={props.bubbleTextColor}
+              type="button"
+              isDisabled={messages().length === 1}
+              class="my-2 ml-2"
+              on:click={clearChat}
+            >
+              <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
+            </DeleteButton>
+          </div>
         )}
 
         <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px]">
@@ -1272,18 +1272,18 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   <>
                     {message.type === 'welcomeMessage' && messages().length === 1 && (
                       <div
-                        class='flex flex-col md:flex-row md:mt-[100px] text-center md:text-left mx-[16px] md:mx-[50px]'
+                        class="flex flex-col md:flex-row md:mt-[100px] text-center md:text-left mx-[16px] md:mx-[50px]"
                         style={{
-                          gap: '24px'
+                          gap: '24px',
                         }}
                       >
-                        <div class='flex text-center'>
-                          <div class='w-[100px] md:w-[320px] m-auto mt-[20px] md:mt-[0px]'>
+                        <div class="flex text-center">
+                          <div class="w-[100px] md:w-[320px] m-auto mt-[20px] md:mt-[0px]">
                             <LogoBig />
                           </div>
                         </div>
                         <div
-                          class='text-[24px] md:text-[48px]'
+                          class="text-[24px] md:text-[48px]"
                           style={{
                             'font-family': 'vw-head',
                             'font-weight': '300',
@@ -1298,7 +1298,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                             What would you like to know?
                           </p>
                           <p
-                            class='mt-[24px]'
+                            class="mt-[24px]"
                             style={{
                               'font-family': 'vw-text',
                               'font-size': '16px',
@@ -1375,19 +1375,12 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               }}
             </For>
             <Show when={messages().length === 1}>
-            <Show when={starterPrompts().length > 0}>
-              <div class="mt-[24px] md:mt-[100px] grid grid-cols-1 md:grid-cols-4 gap-[16px] md:gap-[33px] mb-[30px] md:mb-[60px] md:ml-[50px] md:mx-[50px] ml-[32px] mx-[16px]">
-                <For each={[...starterPrompts()]}>
-                  {(key) => (
-                    <StarterPromptBubble
-                      prompt={key}
-                      onPromptClick={() => promptClick(key)}
-                    />
-                  )}
-                </For>
-              </div>
+              <Show when={starterPrompts().length > 0}>
+                <div class="mt-[24px] md:mt-[100px] grid grid-cols-1 md:grid-cols-4 gap-[16px] md:gap-[33px] mb-[30px] md:mb-[60px] md:ml-[50px] md:mx-[50px] ml-[32px] mx-[16px]">
+                  <For each={[...starterPrompts()]}>{(key) => <StarterPromptBubble prompt={key} onPromptClick={() => promptClick(key)} />}</For>
+                </div>
+              </Show>
             </Show>
-          </Show>
           </div>
           <Show when={previews().length > 0}>
             <div class="w-full flex items-center justify-start gap-2 px-5 pt-2 border-t border-[#eeeeee]">
