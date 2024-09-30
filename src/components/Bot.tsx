@@ -1407,15 +1407,18 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   </div>
                 ) : (
                   <div
-                    class="h-[58px] flex items-center justify-between chatbot-input border border-[#eeeeee]"
-                    data-testid="input"
-                    style={{
-                      margin: 'auto',
-                      'background-color': props.textInput?.backgroundColor ?? defaultBackgroundColor,
-                      color: props.textInput?.textColor ?? defaultTextColor,
-                    }}
+                  class="h-auto flex flex-row items-end justify-between items-center chatbot-input border p-[4px]"
+                  data-testid="input"
+                  style={{
+                    margin: 'auto',
+                    'background-color': defaultBackgroundColor,
+                    'border-radius': '33px',
+                    border: '0',
+                    'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
+                    color: defaultTextColor,
+                  }}
                   >
-                    <div class="flex items-center gap-3 px-4 py-2">
+                    <div class="flex items-center gap-3 ml-[22px]">
                       <span>
                         <CircleDotIcon color="red" />
                       </span>
@@ -1423,18 +1426,18 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                       {isLoadingRecording() && <span class="ml-1.5">Sending...</span>}
                     </div>
                     <div class="flex items-center">
+                      <SendButton
+                        sendButtonColor={props.textInput?.sendButtonColor}
+                        class="m-0 h-14 flex items-center justify-center"
+                        type="button"
+                        isDisabled={loading()}
+                        on:click={onRecordingStopped}
+                      >
+                        <span style={{ 'font-family': 'Poppins, sans-serif' }}>Send Audio</span>
+                      </SendButton>
                       <CancelButton buttonColor={props.textInput?.sendButtonColor} type="button" class="m-0" on:click={onRecordingCancelled}>
                         <span style={{ 'font-family': 'Poppins, sans-serif' }}>Send</span>
                       </CancelButton>
-                      <SendButton
-                        sendButtonColor={props.textInput?.sendButtonColor}
-                        type="button"
-                        isDisabled={loading()}
-                        class="m-0"
-                        on:click={onRecordingStopped}
-                      >
-                        <span style={{ 'font-family': 'Poppins, sans-serif' }}>Send</span>
-                      </SendButton>
                     </div>
                   </div>
                 )}

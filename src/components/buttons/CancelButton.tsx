@@ -15,12 +15,16 @@ export const CancelButton = (props: CancelButtonProps) => {
       disabled={props.isDisabled || props.isLoading}
       {...props}
       class={
-        'py-2 px-4 justify-center font-semibold focus:outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 chatbot-button ' +
+        'w-[56px] h-14 ml-[8px] justify-center font-semibold focus:outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 chatbot-button ' +
         props.class
       }
-      style={{ background: 'transparent', border: 'none' }}
+      style={{
+        background: '#001E50',
+        border: 'none',
+        'border-radius': '100%',
+      }}
     >
-      <XIcon color={props.buttonColor} />
+      <XIcon color={'#FFFFFF'} />
     </button>
   );
 };
