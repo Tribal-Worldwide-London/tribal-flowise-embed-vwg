@@ -175,22 +175,11 @@ textarea {
   opacity: 1 !important;
 }
 
-.chatbot-container {
+body {
   background-image: var(--chatbot-container-bg-image);
   background-color: var(--chatbot-container-bg-color);
-  font-family:
-    'vw-text',
-    'Open Sans',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  font-family: 'vw-text', Roboto;
+  font-display: swap;
 }
 
 .file-annotation-button {
@@ -203,14 +192,12 @@ textarea {
 .chatbot-button {
   color: var(--chatbot-button-color);
   background-color: #0042da;
-  border: 1px solid #0042da;
   border-radius: var(--chatbot-border-radius);
 }
 
 .chatbot-button.selectable {
   color: var(--chatbot-host-bubble-color);
   background-color: #f7f8ff;
-  border: 1px solid #0042da;
 }
 
 .chatbot-host-bubble {
@@ -450,7 +437,7 @@ textarea {
   background-color: transparent;
   border: none;
   padding: 10px 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'vw-text', sans-serif;
 }
 
 @media (max-width: 640px) {
