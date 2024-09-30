@@ -1407,16 +1407,16 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   </div>
                 ) : (
                   <div
-                  class="h-auto flex flex-row items-end justify-between items-center chatbot-input border p-[4px]"
-                  data-testid="input"
-                  style={{
-                    margin: 'auto',
-                    'background-color': defaultBackgroundColor,
-                    'border-radius': '33px',
-                    border: '0',
-                    'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
-                    color: defaultTextColor,
-                  }}
+                    class="h-auto flex flex-row items-end justify-between items-center chatbot-input border p-[4px]"
+                    data-testid="input"
+                    style={{
+                      margin: 'auto',
+                      'background-color': defaultBackgroundColor,
+                      'border-radius': '33px',
+                      border: '0',
+                      'box-shadow': '0px 8px 32px 0px rgba(0, 0, 0, 0.10)',
+                      color: defaultTextColor,
+                    }}
                   >
                     <div class="flex items-center gap-3 ml-[22px]">
                       <span>
