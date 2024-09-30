@@ -1261,10 +1261,10 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           </div>
         )}
 
-        <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px]">
+        <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px] ">
           <div
             ref={chatContainer}
-            class="overflow-y-scroll flex flex-col flex-grow min-w-full w-full md:px-[50px] pt-[120px] relative scrollable-container chatbot-chat-view scroll-smooth"
+            class="fadeInUp-animation  overflow-y-scroll flex flex-col flex-grow min-w-full w-full md:px-[50px] pt-[120px] relative scrollable-container chatbot-chat-view scroll-smooth"
           >
             <For each={[...messages()]}>
               {(message, index) => {
