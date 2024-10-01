@@ -1264,9 +1264,11 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px] ">
           <div
             ref={chatContainer}
-            class={`fadeInUp-animation overflow-y-scroll flex flex-col flex-grow min-w-full w-full ${messages().length === 1 ? 'pt-[50px]' : 'pt-[120px]'} md:px-[50px] relative scrollable-container chatbot-chat-view scroll-smooth`}
+            class={`fadeInUp-animation overflow-y-scroll flex flex-col flex-grow min-w-full w-full ${
+              messages().length === 1 ? 'pt-[50px]' : 'pt-[120px]'
+            } md:px-[50px] relative scrollable-container chatbot-chat-view scroll-smooth`}
             style={{
-              'justify-content': messages().length === 1 ? 'center' : ''
+              'justify-content': messages().length === 1 ? 'center' : '',
             }}
           >
             <For each={[...messages()]}>
@@ -1278,7 +1280,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                         class="grid grid-cols-2 items-center md:flex-row text-center md:text-left mx-[16px] lg:mx-[50px]"
                         style={{
                           gap: '24px',
-                          'grid-template-columns': 'repeat(3, 1fr)'
+                          'grid-template-columns': 'repeat(3, 1fr)',
                         }}
                       >
                         <div class="text-center">
@@ -1292,7 +1294,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                             'font-family': 'vw-head',
                             'font-weight': '300',
                             'line-height': '120%',
-                            'grid-column': '2 / span 2'
+                            'grid-column': '2 / span 2',
                           }}
                         >
                           <p>
