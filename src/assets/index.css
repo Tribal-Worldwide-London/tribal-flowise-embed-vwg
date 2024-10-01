@@ -178,7 +178,7 @@ textarea {
 body {
   background-image: var(--chatbot-container-bg-image);
   background-color: var(--chatbot-container-bg-color);
-  font-family: 'vw-text', Roboto;
+  font-family: 'vw-text', 'roboto-vi', Roboto;
   font-display: swap;
 }
 
