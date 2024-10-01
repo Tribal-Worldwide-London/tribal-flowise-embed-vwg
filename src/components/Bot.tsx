@@ -1264,7 +1264,10 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px] ">
           <div
             ref={chatContainer}
-            class="fadeInUp-animation  overflow-y-scroll flex flex-col flex-grow min-w-full w-full md:px-[50px] pt-[120px] relative scrollable-container chatbot-chat-view scroll-smooth"
+            class={`fadeInUp-animation overflow-y-scroll flex flex-col flex-grow min-w-full w-full ${messages().length === 1 ? 'pt-[50px]' : 'pt-[120px]'} md:px-[50px] relative scrollable-container chatbot-chat-view scroll-smooth`}
+            style={{
+              'justify-content': messages().length === 1 ? 'center' : ''
+            }}
           >
             <For each={[...messages()]}>
               {(message, index) => {
@@ -1272,13 +1275,14 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   <>
                     {message.type === 'welcomeMessage' && messages().length === 1 && (
                       <div
-                        class="flex flex-col md:flex-row md:mt-[100px] text-center md:text-left mx-[16px] md:mx-[50px]"
+                        class="grid grid-cols-2 items-center md:flex-row text-center md:text-left mx-[16px] lg:mx-[50px]"
                         style={{
                           gap: '24px',
+                          'grid-template-columns': 'repeat(3, 1fr)'
                         }}
                       >
-                        <div class="flex text-center">
-                          <div class="w-[100px] md:w-[320px] m-auto mt-[20px] md:mt-[0px]">
+                        <div class="text-center">
+                          <div class="w-full m-w-[300px] md:w-[320px] m-auto mt-[20px] md:mt-[0px]">
                             <LogoBig />
                           </div>
                         </div>
@@ -1288,6 +1292,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                             'font-family': 'vw-head',
                             'font-weight': '300',
                             'line-height': '120%',
+                            'grid-column': '2 / span 2'
                           }}
                         >
                           <p>
