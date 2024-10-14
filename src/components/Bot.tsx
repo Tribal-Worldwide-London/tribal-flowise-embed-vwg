@@ -1286,7 +1286,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                           <div class="w-full m-auto relative">
                             &nbsp;
                             <video autoplay muted loop class="z-0 sm:mt-[16px] m-auto md:absolute md:-top-[300%] md:-right-[20%] max-h-[400px]">
-                              <source src="./logo-video.mp4" type="video/mp4" />
+                              <source src="./animated-logo-video.mp4" type="video/mp4" />
                             </video>
                           </div>
                         </div>
@@ -1302,7 +1302,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                           <p>
                             Hi there!
                             <br />
-                            I'm your <span style={{ 'font-weight': '700' }}> GoingElectricGPT.</span>
+                            I'm your <span style={{ 'font-weight': '700' }}> DrivingElectricGPT.</span>
                             <br />
                             What would you like to know?
                           </p>
