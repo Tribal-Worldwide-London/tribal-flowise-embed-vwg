@@ -1302,7 +1302,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                           <p>
                             Hi there!
                             <br />
-                            I'm your <span style={{ 'font-weight': '700' }}> DrivingElectricGPT.</span>
+                            I'm your <span style={{ 'font-weight': '700' }}> DrivingElectricGPT. </span>
                             <br />
                             What would you like to know?
                           </p>
