@@ -26187,7 +26187,7 @@ const Dn = te(
   Fn = te('<span>Max Allowed Size: <!> MB'),
   Hn = te('<span>Clear'),
   Un = te(
-    '<div class="flex flex-row h-[90] items-center w-full absolute top-0 left-0 z-10 bg-white"><div class="md:pl-[50px] "></div><div class="flex-1 text-[11px] md:text-[24px] px-3">Volkswagen <span>GoingElectricGPT',
+    '<div class="flex flex-row h-[90] items-center w-full absolute top-0 left-0 z-10 bg-white"><div class="md:pl-[50px] "></div><div class="flex-1 text-[11px] md:text-[24px] px-3">Volkswagen <span>DrivingElectricGPT',
   ),
   Kn = te(
     '<div class="md:grid md:grid-cols-3 md:flex-row text-center md:text-left mx-[16px] mb-[16px] lg:mx-[50px] relative"><div class="text-center"><div class="w-full m-auto relative">&nbsp;<video autoplay muted loop class="z-0 sm:mt-[16px] m-auto md:absolute md:-top-[300%] md:-right-[20%] max-h-[400px]"><source src="./animated-logo-video.mp4" type="video/mp4"></video></div></div><div class="text-[24px] md:text-[48px] z-50"><p>Hi there!<br>I\'m your <span> DrivingElectricGPT. </span><br>What would you like to know?</p><p class="mt-[24px]">Here are some sample questions to get you started.<br>Click one to get an answer or enter you own in the input below.',
