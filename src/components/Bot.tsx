@@ -1247,7 +1247,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               <Logo />
             </div>
             <div class="flex-1 text-[11px] md:text-[24px] px-3">
-              Volkswagen <span style={{ 'font-weight': '700' }}>GoingElectricGPT</span>
+              Volkswagen <span style={{ 'font-weight': '700' }}>DrivingElectricGPT</span>
             </div>
             <DeleteButton
               sendButtonColor={props.bubbleTextColor}
