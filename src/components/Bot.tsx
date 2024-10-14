@@ -1285,7 +1285,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                         <div class="text-center">
                           <div class="w-full m-auto relative">
                             &nbsp;
-                            <video autoplay muted loop class='z-0 sm:mt-[16px] m-auto md:absolute md:-top-[300%] md:-right-[20%] max-h-[400px]'>
+                            <video autoplay muted loop class="z-0 sm:mt-[16px] m-auto md:absolute md:-top-[300%] md:-right-[20%] max-h-[400px]">
                               <source src="./public/logo-video.mp4" type="video/mp4" />
                             </video>
                           </div>
