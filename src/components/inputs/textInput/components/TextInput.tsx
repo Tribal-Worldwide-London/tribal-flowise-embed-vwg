@@ -143,7 +143,7 @@ export const TextInput = (props: Props) => {
               isDisabled={props.disabled || isSendButtonDisabled()}
               on:click={handleImageUploadClick}
             >
-              <span style={{ 'font-family': 'Poppins, sans-serif' }}>Image Upload</span>
+              <span>Image Upload</span>
             </ImageUploadButton>
             <input
               style={{ display: 'none' }}
@@ -168,7 +168,7 @@ export const TextInput = (props: Props) => {
               isDisabled={props.disabled || isSendButtonDisabled()}
               on:click={handleFileUploadClick}
             >
-              <span style={{ 'font-family': 'Poppins, sans-serif' }}>File Upload</span>
+              <span>File Upload</span>
             </AttachmentUploadButton>
             <input
               style={{ display: 'none' }}
@@ -195,7 +195,7 @@ export const TextInput = (props: Props) => {
           class="m-0 h-14 flex items-center justify-center"
           on:click={submit}
         >
-          <span style={{ 'font-family': 'Poppins, sans-serif' }}>Send</span>
+          <span>Send</span>
         </SendButton>
         {props.uploadsConfig?.isSpeechToTextEnabled ? (
           <RecordAudioButton

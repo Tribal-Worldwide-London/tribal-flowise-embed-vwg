@@ -1277,19 +1277,21 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                   <>
                     {message.type === 'welcomeMessage' && messages().length === 1 && (
                       <div
-                        class="grid grid-cols-2 items-center md:flex-row text-center md:text-left mx-[16px] lg:mx-[50px]"
+                        class="md:grid md:grid-cols-3 md:flex-row text-center md:text-left mx-[16px] mb-[16px] lg:mx-[50px] relative"
                         style={{
                           gap: '24px',
-                          'grid-template-columns': 'repeat(3, 1fr)',
                         }}
                       >
                         <div class="text-center">
-                          <div class="w-full m-w-[300px] md:w-[320px] m-auto mt-[20px] md:mt-[0px]">
-                            <LogoBig />
+                          <div class="w-full m-auto relative">
+                            &nbsp;
+                            <video autoplay muted loop class='z-0 sm:mt-[16px] m-auto md:absolute md:-top-[300%] md:-right-[20%] max-h-[400px]'>
+                              <source src="./public/logo-video.mp4" type="video/mp4" />
+                            </video>
                           </div>
                         </div>
                         <div
-                          class="text-[24px] md:text-[48px]"
+                          class="text-[24px] md:text-[48px] z-50"
                           style={{
                             'font-family': 'vw-head',
                             'font-weight': '300',
