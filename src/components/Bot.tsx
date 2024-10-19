@@ -297,7 +297,6 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
     setTimeout(() => {
       chatContainer?.scrollTo(0, chatContainer.scrollHeight);
     }, 50);
-
   });
 
   const scrollToBottom = () => {
@@ -465,8 +464,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       retailerId: window.retailerId,
       eventName: 'starter_prompt_clicked',
       feedback: '',
-      starterPromptQuestionId: parseInt(prompt)
-    })
+      starterPromptQuestionId: parseInt(prompt),
+    });
     handleSubmit(prompt);
   };
 
@@ -768,8 +767,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         retailerId: window.retailerId,
         eventName: 'clear_conversation_clicked',
         feedback: '',
-        starterPromptQuestionId: 0
-      })
+        starterPromptQuestionId: 0,
+      });
       removeLocalStorageChatHistory(props.chatflowid);
       setChatId(
         (props.chatflowConfig?.vars as any)?.customerId ? `${(props.chatflowConfig?.vars as any).customerId.toString()}+${uuidv4()}` : uuidv4(),
@@ -804,8 +803,8 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       retailerId: window.retailerId,
       eventName: 'application_opened',
       feedback: '',
-      starterPromptQuestionId: 0
-    })
+      starterPromptQuestionId: 0,
+    });
   });
 
   createEffect(() => {
@@ -1285,7 +1284,6 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         )}
 
         <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px] ">
-          
           <div
             ref={chatContainer}
             class={`fadeInUp-animation overflow-y-scroll flex flex-col flex-grow min-w-full w-full ${
