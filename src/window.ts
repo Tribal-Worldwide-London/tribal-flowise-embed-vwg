@@ -43,6 +43,7 @@ type Chatbot = {
 declare const window:
   | {
       Chatbot: Chatbot | undefined;
+      retailerId: string;
     }
   | undefined;
 

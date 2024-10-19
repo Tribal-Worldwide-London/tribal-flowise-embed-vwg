@@ -8,6 +8,7 @@ import FeedbackContentDialog from '../FeedbackContentDialog';
 import { AgentReasoningBubble } from './AgentReasoningBubble';
 import { TickIcon, XIcon } from '../icons';
 import { SourceBubble } from '../bubbles/SourceBubble';
+import sendEvent from '@/utils/analytics';
 
 type Props = {
   message: MessageType;
@@ -128,6 +129,15 @@ export const BotBubble = (props: Props) => {
         rating: 'THUMBS_UP' as FeedbackRatingType,
         content: '',
       };
+      
+      sendEvent({
+        sessionId: props.chatId,
+        retailerId: window.retailerId,
+        eventName: 'thumbs_feeback_given',
+        feedback: 'thumbsUp',
+        starterPromptQuestionId: 0
+      })
+
       const result = await sendFeedbackQuery({
         chatflowid: props.chatflowid,
         apiHost: props.apiHost,
@@ -158,6 +168,15 @@ export const BotBubble = (props: Props) => {
         rating: 'THUMBS_DOWN' as FeedbackRatingType,
         content: '',
       };
+      
+      sendEvent({
+        sessionId: props.chatId,
+        retailerId: window.retailerId,
+        eventName: 'thumbs_feeback_given',
+        feedback: 'thumbsDown',
+        starterPromptQuestionId: 0
+      })
+
       const result = await sendFeedbackQuery({
         chatflowid: props.chatflowid,
         apiHost: props.apiHost,

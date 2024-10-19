@@ -107,7 +107,7 @@
         // Get a default ID for a retailer
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const retailerId = urlParams.get('rid');
+        window.retailerId = urlParams.get('rid');
 
         import Chatbot from './dist/web.js';
         Chatbot.initFull({
@@ -127,7 +127,7 @@
                     showAgentMessages: true,
                 },
             },
-            vwRetailerId: retailerId ? retailerId : 'no-id-supplied'
+            vwRetailerId: window.retailerId ? window.retailerId : 'no-id-supplied'
         });
     </script>
 

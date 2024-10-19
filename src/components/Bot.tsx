@@ -26,6 +26,7 @@ import { cloneDeep } from 'lodash';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 import { Logo } from './Logo';
 import { LogoBig } from './LogoBig';
+import sendEvent from '@/utils/analytics';
 
 export type FileEvent<T = EventTarget> = {
   target: T;
@@ -296,6 +297,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
     setTimeout(() => {
       chatContainer?.scrollTo(0, chatContainer.scrollHeight);
     }, 50);
+
   });
 
   const scrollToBottom = () => {
@@ -458,6 +460,13 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
   };
 
   const promptClick = (prompt: string) => {
+    sendEvent({
+      sessionId: chatId(),
+      retailerId: window.retailerId,
+      eventName: 'starter_prompt_clicked',
+      feedback: '',
+      starterPromptQuestionId: parseInt(prompt)
+    })
     handleSubmit(prompt);
   };
 
@@ -754,6 +763,13 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
 
   const clearChat = () => {
     try {
+      sendEvent({
+        sessionId: chatId(),
+        retailerId: window.retailerId,
+        eventName: 'clear_conversation_clicked',
+        feedback: '',
+        starterPromptQuestionId: 0
+      })
       removeLocalStorageChatHistory(props.chatflowid);
       setChatId(
         (props.chatflowConfig?.vars as any)?.customerId ? `${(props.chatflowConfig?.vars as any).customerId.toString()}+${uuidv4()}` : uuidv4(),
@@ -783,6 +799,13 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         window.removeEventListener('beforeunload', clearChat);
       };
     }
+    sendEvent({
+      sessionId: chatId(),
+      retailerId: window.retailerId,
+      eventName: 'application_opened',
+      feedback: '',
+      starterPromptQuestionId: 0
+    })
   });
 
   createEffect(() => {
@@ -1262,6 +1285,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         )}
 
         <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px] ">
+          
           <div
             ref={chatContainer}
             class={`fadeInUp-animation overflow-y-scroll flex flex-col flex-grow min-w-full w-full ${

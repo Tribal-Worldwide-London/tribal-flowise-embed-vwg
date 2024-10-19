@@ -1,0 +1,1 @@
+{"version":3,"file":"analytics.d.ts","sourceRoot":"","sources":["../../src/utils/analytics.ts"],"names":[],"mappings":"AAAA,KAAK,SAAS,GAAG;IACb,SAAS,EAAE,MAAM,CAAC;IAClB,UAAU,EAAE,MAAM,CAAC;IACnB,SAAS,EAAE,MAAM,CAAC;IAClB,QAAQ,EAAE,MAAM,CAAC;IACjB,uBAAuB,EAAE,MAAM,CAAA;CAClC,CAAA;AAGD,QAAA,MAAM,SAAS,cAAwB,SAAS,SA4B/C,CAAA;AAED,eAAe,SAAS,CAAC"}
