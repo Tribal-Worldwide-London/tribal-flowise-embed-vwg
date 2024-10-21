@@ -7,8 +7,7 @@ import { CopyToClipboardButton, ThumbsDownButton, ThumbsUpButton } from '../butt
 import FeedbackContentDialog from '../FeedbackContentDialog';
 import { AgentReasoningBubble } from './AgentReasoningBubble';
 import { TickIcon, XIcon } from '../icons';
-import { SourceBubble } from '../bubbles/SourceBubble';
-import sendEvent from '@/utils/analytics';
+import { sendAnalyticsEvent } from '@/utils/analytics';
 
 type Props = {
   message: MessageType;
@@ -130,12 +129,15 @@ export const BotBubble = (props: Props) => {
         content: '',
       };
 
-      sendEvent({
-        sessionId: props.chatId,
-        retailerId: window.retailerId,
-        eventName: 'thumbs_feeback_given',
-        feedback: 'thumbsUp',
-        starterPromptQuestionId: 0,
+      sendAnalyticsEvent({
+        apiHost: props.apiHost,
+        body: {
+          sessionId: props.chatId,
+          retailerId: window.retailerId,
+          eventName: 'thumbs_feeback_given',
+          feedback: 'thumbsUp',
+          starterPromptQuestionId: 0,
+        }
       });
 
       const result = await sendFeedbackQuery({
@@ -169,12 +171,14 @@ export const BotBubble = (props: Props) => {
         content: '',
       };
 
-      sendEvent({
-        sessionId: props.chatId,
-        retailerId: window.retailerId,
-        eventName: 'thumbs_feeback_given',
-        feedback: 'thumbsDown',
-        starterPromptQuestionId: 0,
+      sendAnalyticsEvent({
+        apiHost: props.apiHost,
+        body: { sessionId: props.chatId,
+          retailerId: window.retailerId,
+          eventName: 'thumbs_feeback_given',
+          feedback: 'thumbsDown',
+          starterPromptQuestionId: 0,
+        }
       });
 
       const result = await sendFeedbackQuery({

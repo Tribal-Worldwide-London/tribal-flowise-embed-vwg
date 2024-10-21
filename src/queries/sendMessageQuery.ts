@@ -12,7 +12,7 @@ export type IncomingInput = {
   action?: IAction;
 };
 
-type BaseRequest = {
+export type BaseRequest = {
   apiHost?: string;
   onRequest?: (request: RequestInit) => Promise<void>;
 };

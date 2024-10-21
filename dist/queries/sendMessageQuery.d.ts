@@ -9,7 +9,7 @@ export type IncomingInput = {
     leadEmail?: string;
     action?: IAction;
 };
-type BaseRequest = {
+export type BaseRequest = {
     apiHost?: string;
     onRequest?: (request: RequestInit) => Promise<void>;
 };
@@ -79,5 +79,4 @@ export declare const addLeadQuery: ({ apiHost, body, onRequest }: LeadCaptureReq
     data?: any;
     error?: Error | undefined;
 }>;
-export {};
 //# sourceMappingURL=sendMessageQuery.d.ts.map

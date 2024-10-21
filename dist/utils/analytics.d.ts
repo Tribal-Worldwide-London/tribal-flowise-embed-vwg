@@ -1,3 +1,4 @@
+import { BaseRequest } from "@/queries/sendMessageQuery";
 type EventData = {
     sessionId: string;
     retailerId: number;
@@ -5,6 +6,9 @@ type EventData = {
     feedback: string;
     starterPromptQuestionId: number;
 };
-declare const sendEvent: (eventData: EventData) => void;
-export default sendEvent;
+type AnalyticsEventRequest = BaseRequest & {
+    body: Partial<EventData>;
+};
+export declare const sendAnalyticsEvent: ({ apiHost, body, onRequest }: AnalyticsEventRequest) => void;
+export {};
 //# sourceMappingURL=analytics.d.ts.map
