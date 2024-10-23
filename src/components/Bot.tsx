@@ -467,7 +467,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         eventName: 'starter_prompt_clicked',
         feedback: '',
         starterPromptQuestionId: parseInt(prompt),
-      }
+      },
     });
     handleSubmit(prompt);
   };
@@ -773,7 +773,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           eventName: 'clear_conversation_clicked',
           feedback: '',
           starterPromptQuestionId: 0,
-        }
+        },
       });
       removeLocalStorageChatHistory(props.chatflowid);
       setChatId(
@@ -812,7 +812,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         eventName: 'application_opened',
         feedback: '',
         starterPromptQuestionId: 0,
-      }
+      },
     });
   });
 
@@ -1504,6 +1504,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               />
             )}
           </div>
+          <div class='text-center mx-[16px] md:mx-[50px] pb-1'> Found an issue or have feedback? <a href="mailto:drivingelectricgpt@tribalworldwide.co.uk?subject=GoingElectricGPT%20Feedback">Click Here</a> </div>
         </div>
       </div>
       {sourcePopupOpen() && <Popup isOpen={sourcePopupOpen()} value={sourcePopupSrc()} onClose={() => setSourcePopupOpen(false)} />}
