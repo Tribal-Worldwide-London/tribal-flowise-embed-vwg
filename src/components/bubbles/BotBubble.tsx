@@ -137,7 +137,7 @@ export const BotBubble = (props: Props) => {
           eventName: 'thumbs_feeback_given',
           feedback: 'thumbsUp',
           starterPromptQuestionId: 0,
-        }
+        },
       });
 
       const result = await sendFeedbackQuery({
@@ -173,12 +173,13 @@ export const BotBubble = (props: Props) => {
 
       sendAnalyticsEvent({
         apiHost: props.apiHost,
-        body: { sessionId: props.chatId,
+        body: {
+          sessionId: props.chatId,
           retailerId: window.retailerId,
           eventName: 'thumbs_feeback_given',
           feedback: 'thumbsDown',
           starterPromptQuestionId: 0,
-        }
+        },
       });
 
       const result = await sendFeedbackQuery({

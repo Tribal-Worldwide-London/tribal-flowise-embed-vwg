@@ -1504,7 +1504,11 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
               />
             )}
           </div>
-          <div class='text-center mx-[16px] md:mx-[50px] pb-1'> Found an issue or have feedback? <a href="mailto:drivingelectricgpt@tribalworldwide.co.uk?subject=GoingElectricGPT%20Feedback">Click Here</a> </div>
+          <div class="text-center mx-[16px] md:mx-[50px] pb-1">
+            {' '}
+            Found an issue or have feedback?{' '}
+            <a href="mailto:drivingelectricgpt@tribalworldwide.co.uk?subject=GoingElectricGPT%20Feedback">Click Here</a>{' '}
+          </div>
         </div>
       </div>
       {sourcePopupOpen() && <Popup isOpen={sourcePopupOpen()} value={sourcePopupSrc()} onClose={() => setSourcePopupOpen(false)} />}
