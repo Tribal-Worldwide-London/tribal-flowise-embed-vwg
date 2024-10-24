@@ -1507,8 +1507,11 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           <div class="text-center mx-[16px] md:mx-[50px]">
             {' '}
             Found an issue or have feedback?{' '}
-            <a href="mailto:drivingelectricgpt@tribalworldwide.co.uk?subject=GoingElectricGPT%20Feedback">Click Here</a>{' '} <br/>
-            <div class='pt-2 pb-4' style={{"font-size": '10px', "line-height": "12px"}}>NOTICE: This application is a pilot project.  Any answers, output, or data (collectively, “Answers”) provided by the application may be incorrect.  Any Answers are provided ‘as-is’ with no representations, warranties, or indemnities whatsoever.</div>
+            <a href="mailto:drivingelectricgpt@tribalworldwide.co.uk?subject=GoingElectricGPT%20Feedback">Click Here</a> <br />
+            <div class="pt-2 pb-4" style={{ 'font-size': '10px', 'line-height': '12px' }}>
+              NOTICE: This application is a pilot project. Any answers, output, or data (collectively, “Answers”) provided by the application may be
+              incorrect. Any Answers are provided ‘as-is’ with no representations, warranties, or indemnities whatsoever.
+            </div>
           </div>
         </div>
       </div>
