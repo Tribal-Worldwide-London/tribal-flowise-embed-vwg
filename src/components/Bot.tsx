@@ -1510,8 +1510,16 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             <a href="mailto:drivingelectricgpt@tribalworldwide.co.uk?subject=GoingElectricGPT%20Feedback">Click Here</a> <br />
             <div class="pt-2 pb-4" style={{ 'font-size': '10px', 'line-height': '12px' }}>
               NOTICE: This application is a pilot project. Any answers, output, or data (collectively, “Answers”) provided by the application may be
-              incorrect. Any Answers are provided ‘as-is’ with no representations, warranties, or indemnities whatsoever. <span style={{ 
-              'font-family': 'vw-head', 'font-weight': '700' }}>Do not</span> enter any Personally identifiable information (PII) i.e. names, addresses, VINs.
+              incorrect. Any Answers are provided ‘as-is’ with no representations, warranties, or indemnities whatsoever.{' '}
+              <span
+                style={{
+                  'font-family': 'vw-head',
+                  'font-weight': '700',
+                }}
+              >
+                Do not
+              </span>{' '}
+              enter any Personally identifiable information (PII) i.e. names, addresses, VINs.
             </div>
           </div>
         </div>
