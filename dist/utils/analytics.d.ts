@@ -1,4 +1,4 @@
-import { BaseRequest } from "@/queries/sendMessageQuery";
+import { BaseRequest } from '@/queries/sendMessageQuery';
 type EventData = {
     sessionId: string;
     retailerId: number;

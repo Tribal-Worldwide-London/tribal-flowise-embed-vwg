@@ -467,7 +467,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         eventName: 'starter_prompt_clicked',
         feedback: '',
         starterPromptQuestionId: parseInt(prompt),
-      }
+      },
     });
     handleSubmit(prompt);
   };
@@ -773,7 +773,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           eventName: 'clear_conversation_clicked',
           feedback: '',
           starterPromptQuestionId: 0,
-        }
+        },
       });
       removeLocalStorageChatHistory(props.chatflowid);
       setChatId(
@@ -812,7 +812,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         eventName: 'application_opened',
         feedback: '',
         starterPromptQuestionId: 0,
-      }
+      },
     });
   });
 
@@ -1292,7 +1292,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           </div>
         )}
 
-        <div class="flex flex-col w-full h-full justify-start z-0 mb-[25px] ">
+        <div class="flex flex-col w-full h-full justify-start z-0">
           <div
             ref={chatContainer}
             class={`fadeInUp-animation overflow-y-scroll flex flex-col flex-grow min-w-full w-full ${
@@ -1503,6 +1503,24 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
                 sendSoundLocation={props.textInput?.sendSoundLocation}
               />
             )}
+          </div>
+          <div class="text-center mx-[16px] md:mx-[50px]">
+            {' '}
+            Found an issue or have feedback?{' '}
+            <a href="mailto:drivingelectricgpt@tribalworldwide.co.uk?subject=GoingElectricGPT%20Feedback">Click Here</a> <br />
+            <div class="pt-2 pb-4" style={{ 'font-size': '10px', 'line-height': '12px' }}>
+              NOTICE: This application is a pilot project. Any answers, output, or data (collectively, “Answers”) provided by the application may be
+              incorrect. Any Answers are provided ‘as-is’ with no representations, warranties, or indemnities whatsoever.{' '}
+              <span
+                style={{
+                  'font-family': 'vw-head',
+                  'font-weight': '700',
+                }}
+              >
+                Do not
+              </span>{' '}
+              enter any Personally identifiable information (PII) i.e. names, addresses, VINs.
+            </div>
           </div>
         </div>
       </div>
