@@ -48,6 +48,10 @@ export const BotBubble = (props: Props) => {
   const [thumbsUpColor, setThumbsUpColor] = createSignal(props.feedbackColor ?? defaultFeedbackColor); // default color
   const [thumbsDownColor, setThumbsDownColor] = createSignal(props.feedbackColor ?? defaultFeedbackColor); // default color
 
+  // stripped out message
+  let strippedMessage = props.message.message;
+  strippedMessage = strippedMessage.replace('*command:range-given*', '')
+
   const downloadFile = async (fileAnnotation: any) => {
     try {
       const response = await sendFileDownloadQuery({
@@ -222,7 +226,7 @@ export const BotBubble = (props: Props) => {
 
   onMount(() => {
     if (botMessageEl) {
-      botMessageEl.innerHTML = Marked.parse(props.message.message);
+      botMessageEl.innerHTML = Marked.parse(strippedMessage);
       botMessageEl.querySelectorAll('a').forEach((link) => {
         link.target = '_blank';
       });
@@ -355,7 +359,8 @@ export const BotBubble = (props: Props) => {
             </div>
           )}
           {props.message.message && (
-            <span
+            <>
+            <div
               ref={botMessageEl}
               class="ml-2 max-w-full chatbot-host-bubble prose p-[24px]"
               data-testid="host-bubble"
@@ -366,6 +371,21 @@ export const BotBubble = (props: Props) => {
                 'font-size': '16px',
               }}
             />
+            {props.message.message.includes('command:range-given') &&
+              <div class='text-sm px-[24px] py-[4px]'>
+                <details>
+                  <summary>
+                    This response has a disclaimer attached for Range specifications. click here to read more.
+                  </summary>
+                  <p class='pt-[4px]'>
+                    *All vehicles are tested according to WLTP technical procedures. Figures shown are for comparability purposes; only compare fuel consumption, CO2 and equivalent electric range figures with other vehicles tested to the same technical procedures. These figures may not reflect real life driving results, which will depend upon a number of factors including the accessories fitted (post-registration), variations in weather, driving styles, speed, vehicle age, vehicle load (and, for battery electric vehicles and plug-in hybrid vehicles, the starting charge of the battery and battery age).
+                    <br /><br />
+                    Figures for plug-in hybrid vehicles were obtained using a combination of battery power and fuel. Plug-in hybrid vehicles require mains electricity for charging. Figures for battery electric vehicles were obtained after the battery had been fully charged. Battery electric vehicles require mains electricity for charging. Zero emissions while driving. Figures quoted are subject to change due to ongoing approvals/changes. Please consult your retailer for further information and range figures may include options not available in the UK. Data correct at March 2024.
+                  </p>
+                </details>
+              </div>
+            }
+            </>
           )}
           {props.message.action && (
             <div class="px-4 py-2 flex flex-row justify-start space-x-2">
