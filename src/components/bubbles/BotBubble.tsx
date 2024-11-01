@@ -374,7 +374,7 @@ export const BotBubble = (props: Props) => {
               {props.message.message.includes('command:range-given') && (
                 <div class="text-sm px-[24px] py-[4px]">
                   <details>
-                    <summary>This response has a disclaimer attached for Range specifications. click here to read more.</summary>
+                    <summary>Note: This response includes a disclaimer about range specifications. Tap here for details</summary>
                     <p class="pt-[4px]">
                       *All vehicles are tested according to WLTP technical procedures. Figures shown are for comparability purposes; only compare fuel
                       consumption, CO2 and equivalent electric range figures with other vehicles tested to the same technical procedures. These
