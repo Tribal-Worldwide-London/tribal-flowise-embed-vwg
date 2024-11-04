@@ -53,7 +53,7 @@ export const BotBubble = (props: Props) => {
 
   // stripped out message to remove commands
   let strippedMessage = props.message.message;
-  if(strippedMessage){
+  if (strippedMessage) {
     strippedMessage = strippedMessage.replace('*command:range-given*', '');
     strippedMessage = strippedMessage.replace('*command:charge-given*', '');
   }
