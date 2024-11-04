@@ -374,20 +374,13 @@ export const BotBubble = (props: Props) => {
               {props.message.message.includes('command:range-given') && (
                 <div class="text-sm px-[24px] py-[4px]">
                   <details>
-                    <summary>Note: This response includes a disclaimer about range specifications. Tap here for details</summary>
+                    <summary>Note: This response includes a disclaimer about estimated charging times. Tap here for details.</summary>
                     <p class="pt-[4px]">
-                      *All vehicles are tested according to WLTP technical procedures. Figures shown are for comparability purposes; only compare fuel
-                      consumption, CO2 and equivalent electric range figures with other vehicles tested to the same technical procedures. These
-                      figures may not reflect real life driving results, which will depend upon a number of factors including the accessories fitted
-                      (post-registration), variations in weather, driving styles, speed, vehicle age, vehicle load (and, for battery electric vehicles
-                      and plug-in hybrid vehicles, the starting charge of the battery and battery age).
+                    Charging times will vary depending on various factors, including the selected vehicle, standard specification, the options you choose, the type of charger used, the level of charge in the battery, the age type, condition and temperature of the charger and the battery, the power supply, ambient temperature at the point of use and other environmental factors. 
                       <br />
                       <br />
-                      Figures for plug-in hybrid vehicles were obtained using a combination of battery power and fuel. Plug-in hybrid vehicles require
-                      mains electricity for charging. Figures for battery electric vehicles were obtained after the battery had been fully charged.
-                      Battery electric vehicles require mains electricity for charging. Zero emissions while driving. Figures quoted are subject to
-                      change due to ongoing approvals/changes. Please consult your retailer for further information and range figures may include
-                      options not available in the UK. Data correct at March 2024.
+                      Charging time will be longer in cold weather.  Charging times will also be affected by the charging curve (for example, once charging passes 80%, charging will slow to protect the battery's longevity) and will be longer if battery temperature activates safeguarding technology. Figures are subject to change due to ongoing approvals. The availability of 150kWh and 350kWh chargers is currently limited in the UK. They are mainly located on selected motorways and major arterial routes. These chargers are not currently available in Northern Ireland and numbers are extremely low in Scotland, Wales, and parts of England. Please see EV Route Planner for charging points available in the UK: 
+                      <a href="https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/lifestyle/ev-route-planner.html" target='_blank'> https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/lifestyle/ev-route-planner.html</a>
                     </p>
                   </details>
                 </div>
