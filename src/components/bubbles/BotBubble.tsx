@@ -8,6 +8,9 @@ import FeedbackContentDialog from '../FeedbackContentDialog';
 import { AgentReasoningBubble } from './AgentReasoningBubble';
 import { TickIcon, XIcon } from '../icons';
 import { sendAnalyticsEvent } from '@/utils/analytics';
+import RangeDisclaimer from '../disclaimers/RangeDisclaimer';
+import ChargeDisclaimer from '../disclaimers/ChargeDisclaimer';
+import DisclaimerContainer from '../disclaimers/DisclaimerContainer';
 
 type Props = {
   message: MessageType;
@@ -47,6 +50,13 @@ export const BotBubble = (props: Props) => {
   const [copiedMessage, setCopiedMessage] = createSignal(false);
   const [thumbsUpColor, setThumbsUpColor] = createSignal(props.feedbackColor ?? defaultFeedbackColor); // default color
   const [thumbsDownColor, setThumbsDownColor] = createSignal(props.feedbackColor ?? defaultFeedbackColor); // default color
+
+  // stripped out message to remove commands
+  let strippedMessage = props.message.message;
+  if (strippedMessage) {
+    strippedMessage = strippedMessage.replace('*command:range-given*', '');
+    strippedMessage = strippedMessage.replace('*command:charge-given*', '');
+  }
 
   const downloadFile = async (fileAnnotation: any) => {
     try {
@@ -222,7 +232,7 @@ export const BotBubble = (props: Props) => {
 
   onMount(() => {
     if (botMessageEl) {
-      botMessageEl.innerHTML = Marked.parse(props.message.message);
+      botMessageEl.innerHTML = Marked.parse(strippedMessage);
       botMessageEl.querySelectorAll('a').forEach((link) => {
         link.target = '_blank';
       });
@@ -355,17 +365,20 @@ export const BotBubble = (props: Props) => {
             </div>
           )}
           {props.message.message && (
-            <span
-              ref={botMessageEl}
-              class="ml-2 max-w-full chatbot-host-bubble prose p-[24px]"
-              data-testid="host-bubble"
-              style={{
-                'background-color': 'white',
-                color: props.textColor ?? defaultTextColor,
-                'border-radius': '16px',
-                'font-size': '16px',
-              }}
-            />
+            <>
+              <div
+                ref={botMessageEl}
+                class="ml-2 max-w-full chatbot-host-bubble prose p-[24px]"
+                data-testid="host-bubble"
+                style={{
+                  'background-color': 'white',
+                  color: props.textColor ?? defaultTextColor,
+                  'border-radius': '16px',
+                  'font-size': '16px',
+                }}
+              />
+              <DisclaimerContainer message={props.message.message} />
+            </>
           )}
           {props.message.action && (
             <div class="px-4 py-2 flex flex-row justify-start space-x-2">
